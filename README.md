@@ -3,22 +3,18 @@
 Welcome to your searchbird project!  To make sure things are working
 properly, you may want to:
 
-    $ sbt update test
+1.  generate the service from template  
+    scala-bootstrapper searchbird
+    
+2.  start three service  
+    ./sbt 'run -f config/development.scala -D shard=0'  
+    ./sbt 'run -f config/development.scala -D shard=1'  
+    ./sbt 'run -f config/development.scala'  
 
-There is a tutorial for what to do next, which you can find in the
-scala-bootstrapper README.rdoc file.
-
-# Configuring Intellij
-
-If you want to setup Intellij, it has to happen off to the side:
-
-    $ sbt
-    > *sbtIdeaRepo at http://mpeltonen.github.com/maven/
-    > *idea is com.github.mpeltonen sbt-idea-processor 0.4.0
-    > update
-    > idea
-
-# Documenting your project
-
-Add documentation here!  Eventually, you'll be able to publish this to
-a web site for the world to easily find and read.
+3.  connect to service  
+    ./console localhost 9000  
+    ./console localhost 9001  
+    ./console localhost 9999  
+    
+    
+For detail information, view the [searchbird refer](https://twitter.github.io/scala_school/zh_cn/searchbird.html)
